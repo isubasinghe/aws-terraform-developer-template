@@ -18,8 +18,15 @@ resource "aws_instance" "web" {
         Name    =   var.ec2_instance_name
     }
     key_name    =   var.ec2_key_name
+
     vpc_security_group_ids = ["${aws_security_group.sydney_dev.id}"]
 
+    root_block_device {
+        delete_on_termination   =   true
+        iops    =   100
+        volume_size =   var.ec2_storage_size
+    }
+    
     provisioner "remote-exec" {
         scripts =   [
             "${path.module}/scripts/update.sh",

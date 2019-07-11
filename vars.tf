@@ -9,3 +9,7 @@ variable "ec2_instance_type" {
 variable "ec2_key_name" {
     default =   ""
 }
+
+variable "ec2_storage_size" {
+    default =   30
+}
