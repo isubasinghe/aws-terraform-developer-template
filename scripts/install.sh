@@ -8,3 +8,4 @@ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt update
 sudo apt-get install nodejs -y
 sudo apt-get install openssl -y
+sudo apt-get install libcap2-bin -y
