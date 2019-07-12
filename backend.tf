@@ -26,12 +26,23 @@ resource "aws_instance" "web" {
         iops    =   100
         volume_size =   var.ec2_storage_size
     }
+
+    provisioner "file" {
+        source  =   "./.keys/key.key"
+        destination =   "~/key.key"
+    }
+
+    provisioner "file" {
+        source  =   "./.keys/cert.cert"
+        destination =   "~/cert.cert"
+    }
     
     provisioner "remote-exec" {
         scripts =   [
             "${path.module}/scripts/update.sh",
             "${path.module}/scripts/upgrade.sh",
-            "${path.module}/scripts/install.sh"
+            "${path.module}/scripts/install.sh",
+            "${path.module}/scripts/coder.sh"
             ]
     }
     
