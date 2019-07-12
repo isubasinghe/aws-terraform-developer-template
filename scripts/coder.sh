@@ -7,4 +7,3 @@ wget https://github.com/cdr/code-server/releases/download/1.1156-vsc1.33.1/code-
 tar -xf code-server1.1156-vsc1.33.1-linux-x64.tar.gz -C ~/coder
 sudo setcap 'cap_net_bind_service=+ep' ~/coder/code-server1.1156-vsc1.33.1-linux-x64/code-server
 ~/coder/code-server1.1156-vsc1.33.1-linux-x64/code-server --cert=cert.cert --cert-key=key.key --port=80 &
-disown
