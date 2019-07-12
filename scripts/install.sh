@@ -9,3 +9,4 @@ sudo apt update
 sudo apt-get install nodejs -y
 sudo apt-get install openssl -y
 sudo apt-get install libcap2-bin -y
+sudo apt-get install screen -y
